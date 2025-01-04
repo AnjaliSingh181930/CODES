@@ -43,6 +43,7 @@ public:
                 q.push(i);          
         }
 
+        //we are passing result by reference so the ans will be saved in that and we will return it to the main function
         topo_sort(adj, result, indegree, q);
 
         return result; 
