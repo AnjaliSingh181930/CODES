@@ -1,0 +1,19 @@
+sudo apt install iverilog
+
+iverilog -v        ->       Icarus Verilog version 11.0 (stable)
+
+Example:
+
+	Code:
+		module hello;
+			initial begin
+			$display("Hello, Verilog!");
+			$finish;
+			end
+		endmodule
+		
+	Run commands:
+		iverilog -o example_tb example.v
+		vvp example_tb
+
+

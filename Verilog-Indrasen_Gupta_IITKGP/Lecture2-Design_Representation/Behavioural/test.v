@@ -9,7 +9,7 @@ module testbench;
     initial 
         begin
             //monitor is something like printf
-            $monitor ($time, "A = %b, B = %b, C = %b, S = %b, Cy = %b", A, B, C, S, Cy);
+            $monitor ($time, " A = %b, B = %b, C = %b, S = %b, Cy = %b ", A, B, C, S, Cy);
             //work with gtk wave
             // $dumpfile ("full_adder.vcd");
             // $dumpvars (0, testbench);
