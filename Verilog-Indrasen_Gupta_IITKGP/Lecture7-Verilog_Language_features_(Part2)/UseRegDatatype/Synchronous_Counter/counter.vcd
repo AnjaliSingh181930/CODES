@@ -1,0 +1,40 @@
+$date
+	Mon Jan  6 17:46:59 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 32 ! count [31:0] $end
+$var reg 1 " clock $end
+$var reg 1 # rst $end
+$scope module DUT $end
+$var wire 1 " clock $end
+$var wire 1 # rst $end
+$var reg 32 $ count [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx $
+x#
+x"
+bx !
+$end
+#5
+1"
+0#
+#10
+1#
+#15
+0"
+0#
+#20
+1"
+#25
+0"
+1#

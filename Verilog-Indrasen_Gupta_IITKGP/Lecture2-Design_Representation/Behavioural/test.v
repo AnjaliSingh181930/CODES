@@ -20,4 +20,4 @@ module testbench;
             #5 A =1;
             #5 $finish;
         end
-endmodule
+endmodule                                                         

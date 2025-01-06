@@ -30,3 +30,6 @@ module testbench;
         $finish;
     end
 endmodule
+
+// $ iverilog -o result sum.v carry.v full_adder.v four_bit_adder.v test.v
+// $ vvp result
