@@ -4,7 +4,7 @@ module sum(A, B, C, S);
 
     wire sum;
 
-    xor x1(A, B, sum);
-    xor x2(sum, C, S);
+    xor x1(sum, A, B);
+    xor x2(S, C, sum);
 
 endmodule

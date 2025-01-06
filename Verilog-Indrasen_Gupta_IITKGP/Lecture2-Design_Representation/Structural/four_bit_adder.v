@@ -1,8 +1,9 @@
-module four_bit_adder(A, B, C, S, Cy);
-    input [3:0] A, B;
-    input C;
-    output [3:0] S;
-    output Cy;
+module four_bit_adder(
+    input [3:0] A, B,
+    input C,
+    output [3:0] S,
+    output Cy
+);
 
     wire [2:0] c_out; // gives the interconnection
 
