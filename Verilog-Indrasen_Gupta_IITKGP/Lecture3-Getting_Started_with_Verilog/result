@@ -1,0 +1,96 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55a303dbf940 .scope module, "testbench" "testbench" 2 1;
+ .timescale 0 0;
+v0x55a303dd5f60_0 .var "A", 0 0;
+v0x55a303dd6020_0 .var "B", 0 0;
+v0x55a303dd60f0_0 .var "C", 0 0;
+v0x55a303dd61f0_0 .var "D", 0 0;
+v0x55a303dd62c0_0 .var "E", 0 0;
+v0x55a303dd6360_0 .var "F", 0 0;
+v0x55a303dd6430_0 .net "Y", 0 0, L_0x55a303dd6a50;  1 drivers
+S_0x55a303dbfad0 .scope module, "DUT" "ckt" 2 6, 3 1 0, S_0x55a303dbf940;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "C";
+    .port_info 3 /INPUT 1 "D";
+    .port_info 4 /INPUT 1 "E";
+    .port_info 5 /INPUT 1 "F";
+    .port_info 6 /OUTPUT 1 "Y";
+L_0x55a303dacbb0/d .functor NAND 1, v0x55a303dd5f60_0, v0x55a303dd6020_0, C4<1>, C4<1>;
+L_0x55a303dacbb0 .delay 1 (1,1,1) L_0x55a303dacbb0/d;
+L_0x55a303dacc20/d .functor AND 1, v0x55a303dd60f0_0, L_0x55a303dd67b0, v0x55a303dd61f0_0, C4<1>;
+L_0x55a303dacc20 .delay 1 (2,2,2) L_0x55a303dacc20/d;
+L_0x55a303dd67b0 .functor NOT 1, v0x55a303dd6020_0, C4<0>, C4<0>, C4<0>;
+L_0x55a303dd6870/d .functor NOR 1, v0x55a303dd62c0_0, v0x55a303dd6360_0, C4<0>, C4<0>;
+L_0x55a303dd6870 .delay 1 (1,1,1) L_0x55a303dd6870/d;
+L_0x55a303dd6a50/d .functor NAND 1, L_0x55a303dacbb0, L_0x55a303dacc20, L_0x55a303dd6870, C4<1>;
+L_0x55a303dd6a50 .delay 1 (1,1,1) L_0x55a303dd6a50/d;
+v0x55a303d84cf0_0 .net "A", 0 0, v0x55a303dd5f60_0;  1 drivers
+v0x55a303dd56b0_0 .net "B", 0 0, v0x55a303dd6020_0;  1 drivers
+v0x55a303dd5770_0 .net "C", 0 0, v0x55a303dd60f0_0;  1 drivers
+v0x55a303dd5810_0 .net "D", 0 0, v0x55a303dd61f0_0;  1 drivers
+v0x55a303dd58d0_0 .net "E", 0 0, v0x55a303dd62c0_0;  1 drivers
+v0x55a303dd59e0_0 .net "F", 0 0, v0x55a303dd6360_0;  1 drivers
+v0x55a303dd5aa0_0 .net "Y", 0 0, L_0x55a303dd6a50;  alias, 1 drivers
+v0x55a303dd5b60_0 .net *"_ivl_0", 0 0, L_0x55a303dd67b0;  1 drivers
+v0x55a303dd5c40_0 .net "t1", 0 0, L_0x55a303dacbb0;  1 drivers
+v0x55a303dd5d00_0 .net "t2", 0 0, L_0x55a303dacc20;  1 drivers
+v0x55a303dd5dc0_0 .net "t3", 0 0, L_0x55a303dd6870;  1 drivers
+    .scope S_0x55a303dbf940;
+T_0 ;
+    %vpi_call 2 11 "$monitor", $time, "A = %b, B = %b, C = %b, D = %b, E = %b, F = %b, Y = %b", v0x55a303dd5f60_0, v0x55a303dd6020_0, v0x55a303dd60f0_0, v0x55a303dd61f0_0, v0x55a303dd62c0_0, v0x55a303dd6360_0, v0x55a303dd6430_0 {0 0 0};
+    %vpi_call 2 13 "$dumpfile", "ckt.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55a303dbf940 {0 0 0};
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a303dd5f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd6020_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd60f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a303dd61f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd62c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd6360_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd5f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd6020_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a303dd60f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a303dd61f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd62c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd6360_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a303dd5f60_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55a303dd60f0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55a303dd6360_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 19 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test.v";
+    "ckt.v";

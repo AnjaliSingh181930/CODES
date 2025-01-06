@@ -3,15 +3,15 @@ module testbench;
     reg A, B, C, D, E, F; //left side variable ,i.e., input are declared as reg
     wire Y;
 
-    example DUT(A, B, C, D, E, F , Y);
+    ckt DUT(A, B, C, D, E, F , Y);
 
     initial 
         begin
             //monitor is something like printf
             $monitor ($time, "A = %b, B = %b, C = %b, D = %b, E = %b, F = %b, Y = %b", A, B, C, D, E, F, Y);
             //work with gtk wave
-            // $dumplfile ("example.vcd");
-            // $dumpvars (0, testbench);
+            $dumpfile ("ckt.vcd");   //vcd means value change dump
+            $dumpvars (0, testbench);
             #5 A =1; B= 0; C = 0; D = 1; E =0; F =0;
             #5 A =0; B= 0; C = 1; D = 1; E =0; F =0;
             #5 A =1; C =0;
