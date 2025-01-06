@@ -2,8 +2,9 @@
 module full_adder (A, B, C, S, Cy);
     input A, B, C;
     output S, Cy;
-    S = A ^ B ^ C;
-    Cy = (A & B) | (B & C) | (C & A);
+    assign S = A ^ B ^ C; //using assign we can directly write boolean expression
+    assign Cy = (A & B) | (B & C) | (C & A);
+
 endmodule
 
 // Through Truth Table
