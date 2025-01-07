@@ -14,3 +14,5 @@ module four_bit_adder(
     full_adder FD4(A[3], B[3], c_out[2], S[3], Cy);
 
 endmodule
+
+//here we have implemented it as a ripple-carry-adder

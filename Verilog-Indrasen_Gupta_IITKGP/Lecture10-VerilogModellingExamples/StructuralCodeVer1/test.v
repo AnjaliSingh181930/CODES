@@ -1,4 +1,4 @@
-module test_bench;
+module testbench;
     reg [15:0] inp;       // 16-bit input
     reg [3:0] sele;       // 4-bit select line
     wire outp;            // Output of mux16to1
@@ -7,6 +7,11 @@ module test_bench;
     mux16to1 M(.in(inp), .sel(sele), .out(outp));
 
     initial begin
+
+        // Initialize the waveform dump for GTKWave
+        $dumpfile("mux16.vcd"); //vcd means value change dump
+        $dumpvars(0, testbench);
+
         // Monitor values
         $monitor($time, " Input: %h, Select Line: %h, Output: %b", inp, sele, outp);
 

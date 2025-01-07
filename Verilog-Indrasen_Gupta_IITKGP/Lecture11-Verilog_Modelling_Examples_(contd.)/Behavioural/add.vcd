@@ -1,0 +1,112 @@
+$date
+	Tue Jan  7 15:21:21 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module testbench $end
+$var wire 1 ! zero $end
+$var wire 1 " sign $end
+$var wire 1 # parity $end
+$var wire 1 $ overflow $end
+$var wire 1 % carry $end
+$var wire 16 & Z [15:0] $end
+$var reg 16 ' X [15:0] $end
+$var reg 16 ( Y [15:0] $end
+$scope module DUT $end
+$var wire 16 ) X [15:0] $end
+$var wire 16 * Y [15:0] $end
+$var wire 1 $ overflow $end
+$var wire 1 ! zero $end
+$var wire 1 " sign $end
+$var wire 1 # parity $end
+$var wire 1 % carry $end
+$var wire 16 + Z [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx +
+bx *
+bx )
+bx (
+bx '
+bx &
+x%
+x$
+x#
+x"
+x!
+$end
+#50
+0$
+0"
+1#
+0!
+b11 &
+b11 +
+0%
+b10 (
+b10 *
+b1 '
+b1 )
+#100
+1!
+b0 &
+b0 +
+1%
+b1 (
+b1 *
+b1111111111111111 '
+b1111111111111111 )
+#150
+1$
+1"
+0#
+0!
+b1000000000000000 &
+b1000000000000000 +
+0%
+b111111111111111 '
+b111111111111111 )
+#200
+1$
+0"
+1%
+b111111111111111 &
+b111111111111111 +
+b1111111111111111 (
+b1111111111111111 *
+b1000000000000000 '
+b1000000000000000 )
+#250
+0$
+1#
+1!
+b0 &
+b0 +
+0%
+b0 (
+b0 *
+b0 '
+b0 )
+#300
+0$
+1"
+0!
+b1111111111111111 &
+b1111111111111111 +
+b1100000011000000 (
+b1100000011000000 *
+b11111100111111 '
+b11111100111111 )
+#350
+b1010101010101010 (
+b1010101010101010 *
+b101010101010101 '
+b101010101010101 )
+#400

@@ -11,7 +11,7 @@ module testbench;
 
     initial begin
         // Initialize the waveform dump for GTKWave
-        $dumpfile("4-bit_adder.vcd"); //vcd means value change dump
+        $dumpfile("four_bit_adder.vcd"); //vcd means value change dump
         $dumpvars(0, testbench);
 
         // Monitor the values of inputs and outputs

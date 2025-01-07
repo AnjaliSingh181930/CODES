@@ -1,0 +1,50 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x558e26006e80 .scope module, "testbench" "testbench" 2 2;
+ .timescale -8 -9;
+v0x558e26019690_0 .var "inp", 15 0;
+v0x558e26019780_0 .net "outp", 0 0, L_0x558e26019950;  1 drivers
+v0x558e26019850_0 .var "sele", 3 0;
+S_0x558e26007010 .scope module, "DUT" "mux16to1" 2 6, 3 1 0, S_0x558e26006e80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "in";
+    .port_info 1 /INPUT 4 "sel";
+    .port_info 2 /OUTPUT 1 "out";
+v0x558e25fcfba0_0 .net "in", 15 0, v0x558e26019690_0;  1 drivers
+v0x558e26019490_0 .net "out", 0 0, L_0x558e26019950;  alias, 1 drivers
+v0x558e26019550_0 .net "sel", 3 0, v0x558e26019850_0;  1 drivers
+L_0x558e26019950 .part/v v0x558e26019690_0, v0x558e26019850_0, 1;
+    .scope S_0x558e26006e80;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "mux.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x558e26006e80 {0 0 0};
+    %vpi_call 2 15 "$monitor", $time, " Input: %h, Select Line: %h, Output: %b", v0x558e26019690_0, v0x558e26019850_0, v0x558e26019780_0 {0 0 0};
+    %delay 50, 0;
+    %pushi/vec4 16138, 0, 16;
+    %store/vec4 v0x558e26019690_0, 0, 16;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x558e26019850_0, 0, 4;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x558e26019850_0, 0, 4;
+    %delay 50, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0x558e26019850_0, 0, 4;
+    %vpi_call 2 19 "$monitor", $time, " Finished Simulation" {0 0 0};
+    %delay 50, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test.v";
+    "mux.v";
