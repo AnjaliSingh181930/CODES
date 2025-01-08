@@ -17,5 +17,5 @@ endmodule
 // curr_flag    flag
 // 0            2
 // 1            2
-// 2            0 , becoz falg is initialized as 0 at start of case
+// 2            0 , becoz falg is initialized as 0 at start of case, hence a pure combinational circui generated.
 // 3            0

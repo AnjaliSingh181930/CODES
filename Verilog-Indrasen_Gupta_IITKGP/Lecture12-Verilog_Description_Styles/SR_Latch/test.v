@@ -15,6 +15,10 @@ module testbench;
         // Display the outputs
         $monitor("Time = %0t | S = %b, R = %b | Q = %b, Qbar = %b", $time, S, R, Q, Qbar);
 
+        // Initialize the waveform dump for GTKWave
+        $dumpfile("sr_latch.vcd"); //vcd means value change dump
+        $dumpvars(0, testbench);
+
         // Invalid state: S = 1, R = 1 (should not happen in SR latch)
         #5 S = 1; R = 1;
         

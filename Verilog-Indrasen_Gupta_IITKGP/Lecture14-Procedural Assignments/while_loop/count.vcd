@@ -1,0 +1,20 @@
+$date
+	Wed Jan  8 11:39:17 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$scope module uut $end
+$var integer 32 ! count [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1011 !
+$end
+#100

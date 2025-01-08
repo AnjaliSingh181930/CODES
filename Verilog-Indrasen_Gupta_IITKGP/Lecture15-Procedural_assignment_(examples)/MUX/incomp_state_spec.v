@@ -16,6 +16,6 @@ endmodule
 // curr_flag    flag
 // 0            2
 // 1            2
-// 2            not defined, so synthesiser will assume that at curr_state = 2 we will retain previous value, map to storage element i.e., latch
+// 2            not defined, so synthesiser will assume that at curr_state = 2 we will retain previous value, map to storage element i.e., latch(2-bit) generated.
 // 3            0
 
