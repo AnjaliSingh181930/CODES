@@ -39,6 +39,11 @@ module testbench;
 
     // Monitor the output
     initial begin
+
+        // Initialize the waveform dump for GTKWave
+        $dumpfile("shift_reg.vcd"); //vcd means value change dump
+        $dumpvars(0, testbench);
+
         $monitor("At time %t: A = %b, E = %b, clear = %b", $time, A, E, clear);
     end
 
